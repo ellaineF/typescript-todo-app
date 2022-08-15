@@ -9,7 +9,15 @@ describe('todo list test', () => {
     render(<TodoList todos={mockData} />);
     screen.debug();
     mockData.forEach((d) => 
-        expect(screen.getByTestId(d.id)).toBeInTheDocument()
+        expect(screen.getByText(d.title)).toBeInTheDocument()
     );
   })
+  /* it('should show id of todos', () => {
+    render(<TodoList todos={mockData} />);
+    screen.debug();
+    mockData.forEach((d) =>{
+      expect(screen.getByTestId(d.id)).toBeInTheDocument();
+    })
+  }) */
+
 });
