@@ -44,7 +44,7 @@ function App() {
       const result = await fetch('https://jsonplaceholder.typicode.com/todos').then((response) =>
         response.json()
       );
-      setTodos(result.slice(0, 5));
+      Array.isArray(result) ? setTodos(result.slice(0, 5)) : [];
       setLoading(false);
     }
     fetchData();
@@ -68,7 +68,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="header">My todo list</h1>
-      {loading ? (
+      { loading ? (
         'Loading' 
       ) : ( 
         <TodoList todos={todos} removeHandler={removeTodo} updateTodo={updateTodo} />
