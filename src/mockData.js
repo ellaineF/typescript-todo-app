@@ -8,7 +8,7 @@ const mockData = [
     {
       userId: 1,
       id: 2,
-      title: 'Do laundry',
+      title: 'Do math homework',
       completed: false,
     },
     {

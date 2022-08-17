@@ -29,7 +29,7 @@ describe('<App /> tests', () => {
 
       userEvent.type(screen.getByRole('textbox'), 'Do math homework');
       userEvent.click(screen.getByText(/Add new todo/i));
-      await waitForElementToBeRemoved(() => screen.getByText(/saving/i));
+      expect(screen.queryByTestId(/saving/i)).not.toBeInTheDocument();
       expect(screen.getByText(/Do math homework/i)).toBeInTheDocument();
   });
 

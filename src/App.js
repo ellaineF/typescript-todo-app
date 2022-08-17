@@ -75,12 +75,12 @@ function App() {
       )}
 
       <div className='add-todo-form'>
-        { saving ? (
-          'Saving'
+        { saving ? ( 
+          <div data-testid="Saving"> Saving </div>
         ) : (
           <form onSubmit={addTodo}>
             <input type='text' onChange={onChange} />
-            <button type='submit'>Add new todo</button>
+            <button type='submit' data-testid='close-btn-3'>Add new todo</button>
           </form>
         )}
       </div>
